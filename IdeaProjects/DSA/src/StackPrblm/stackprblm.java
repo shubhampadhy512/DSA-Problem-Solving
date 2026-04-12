@@ -1,14 +1,64 @@
 package StackPrblm;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Stack;
 
 public class stackprblm {
     public static void main(String[] args){
-//        String[] s = {"5","+"};
-        int[] s = {2,4};
-        int[] s1 = {1,2,3,4};
-        System.out.println(Arrays.toString(nextGreaterElement(s,s1)));
+        String s = "helloworld";
+//        int[] s = {2,4};
+//        int[] s1 = {73,73,73,73};
+        System.out.println(reversePrefix(s,'a'));
+    }
+    public static String reversePrefix(String word, char ch) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
+        int len = word.length();
+        int i = 0;
+        boolean flag = false;
+        while(i<len){
+            stack.push(word.charAt(i));
+            if(word.charAt(i)==ch){
+                flag = true;
+                break;
+            }
+            i++;
+        }
+        if(flag) {
+            i+=1;
+            while (!stack.isEmpty()) {
+                sb.append(stack.pop());
+            }
+            while (i < len) {
+                sb.append(word.charAt(i));
+                i++;
+            }
+        }else {
+            for(int j = 0;j<len;j++){
+                sb.append(word.charAt(j));
+            }
+        }
+        return sb.toString();
+    }
+    public static int[] dailyTemperatures(int[] temperatures) {
+        int n = temperatures.length;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int[] result = new int[n];
+        Stack<Integer> st = new Stack<>();
+        for (int i=n-1;i>=0;i--){
+            while(!st.isEmpty()&&st.peek()<=temperatures[i]){
+                map.remove(st.pop());
+            }
+            if(!st.isEmpty()){
+                result[i]=map.get(st.peek())-i;
+            }else{
+                result[i]=0;
+            }
+            st.push(temperatures[i]);
+            map.put(temperatures[i],i);
+        }
+        return result;
     }
     public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int[] ans = new int[10000];
