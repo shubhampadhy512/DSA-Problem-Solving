@@ -120,28 +120,28 @@ public class stackprblm {
         }
         return ans;
     }
-    public static boolean isValid(String s) {
-        Stack <Character> stack=new Stack<>();
-        int len=s.length();
-        boolean flag=true;
-        for(int i =0;i<len;i++){
-            if(s.charAt(i)=='{' || s.charAt(i)=='['||s.charAt(i)=='('){
-                stack.push(s.charAt(i));
-                flag=false;
-            }
-            if(s.charAt(i)=='}' || s.charAt(i)==']'||s.charAt(i)==')'){
-                if(stack.isEmpty())return false;
-                char temp=stack.peek();
-                if((temp=='{'&&s.charAt(i)=='}')||(temp=='['&&s.charAt(i)==']')||(temp=='('&&s.charAt(i)==')')){
-                    stack.pop();
-                    flag=true;
-                }else{
-                    return false;
-                }
-            }
-        }
-        if(!stack.isEmpty())return false;
-        if(!flag) return false;
-        return true;
-    }
+//    public static boolean isValid(String s) {
+//        Stack <Character> stack=new Stack<>();
+//        int len=s.length();
+//        boolean flag=true;
+//        for(int i =0;i<len;i++){
+//            if(s.charAt(i)=='{' || s.charAt(i)=='['||s.charAt(i)=='('){
+//                stack.push(s.charAt(i));
+//                flag=false;
+//            }
+//            if(s.charAt(i)=='}' || s.charAt(i)==']'||s.charAt(i)==')'){
+//                if(stack.isEmpty())return false;
+//                char temp=stack.peek();
+//                if((temp=='{'&&s.charAt(i)=='}')||(temp=='['&&s.charAt(i)==']')||(temp=='('&&s.charAt(i)==')')){
+//                    stack.pop();
+//                    flag=true;
+//                }else{
+//                    return false;
+//                }
+//            }
+//        }
+//        if(!stack.isEmpty())return false;
+//        if(!flag) return false;
+//        return true;
+//    }
 }
