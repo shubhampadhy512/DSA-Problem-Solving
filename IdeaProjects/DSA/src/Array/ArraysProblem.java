@@ -20,6 +20,21 @@ public class ArraysProblem {
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
         System.out.println(countNegatives(arr4));
     }
+
+    public static int getMinDistance(int[] nums, int target, int start) {
+        int n  = nums.length;
+        int i=0;
+        int pre;
+        int ans = Integer.MAX_VALUE;
+        while(i<n){
+            if(nums[i]==target){
+                pre = Math.abs(i-start);
+                ans = Math.min(pre,ans);
+            }
+            i++;
+        }
+        return ans;
+    }
     public static int countNegatives(int[][] grid) {
         int n = grid.length;
         int n2 = grid[0].length;

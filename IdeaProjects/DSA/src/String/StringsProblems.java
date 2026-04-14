@@ -4,14 +4,38 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.lang.StringBuilder;
 import java.util.HashSet;
+import java.util.Stack;
 
 
 public class StringsProblems {
     public static void main(String[] args) {
-        String s = "0";
+        String s = "helloworld";
         String s1 = "01";
 //        String[] s = {"cba","efg","dgi"};
-        System.out.println(addBinary(s,s1));
+        System.out.println(reversePrefix(s,'a'));
+    }
+    public static String reversePrefix(String word, char ch) {
+        StringBuilder sb = new StringBuilder();
+        int n = word.length();
+        int i =0;
+        while(i<n){
+            sb.append(word.charAt(i));
+            if(word.charAt(i)==ch){
+                break;
+            }
+            i++;
+        }
+        if(i<n){
+            for(int j = i; j>=0;j--){
+                sb.setCharAt(i-j,word.charAt(j));
+            }
+            i+=1;
+            while(i<n){
+                sb.append(word.charAt(i));
+                i++;
+            }
+        }
+        return sb.toString();
     }
     public static  String addBinary(String a, String b) {
         int num1 = Integer.parseInt(a);
