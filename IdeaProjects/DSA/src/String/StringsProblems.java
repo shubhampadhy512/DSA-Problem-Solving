@@ -71,19 +71,6 @@ public class StringsProblems {
         if(carry==1)sb.insert(0,"1");
         return sb.toString();
     }
-//    not done this prblm
-    public static String removeDuplicateLetters(String s) {
-        HashSet<Character> set = new HashSet<>();
-        int i=s.length();
-        for(int j =0;j<i;j++){
-            set.add(s.charAt(j));
-        }
-        StringBuilder sb = new StringBuilder();
-        for(char k: set){
-            sb.append(k);
-        }
-        return sb.toString();
-    }
     public static int maxPower(String s) {
        int n = s.length();
        int ans =0;

@@ -2,14 +2,36 @@ package StackPrblm;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Stack;
 
 public class stackprblm {
     public static void main(String[] args){
-        String s = "helloworld";
+        String s = "bcabc";
 //        int[] s = {2,4};
 //        int[] s1 = {73,73,73,73};
-        System.out.println(reversePrefix(s,'a'));
+        System.out.println(removeDuplicateLetters(s));
+    }
+    public static String removeDuplicateLetters(String s) {
+       Stack<Character> stack = new Stack<>();
+       HashMap<Character,Integer> map = new HashMap<>();
+       StringBuffer sb = new StringBuffer();
+       int n = s.length();
+       for(int i =0; i<n;i++){
+           char c = s.charAt(i);
+           map.put(c,map.getOrDefault(c,0)+1);
+       }
+       System.out.println(map);
+       System.out.println(map.get('h'));
+       for(int i =n-1; i>=0;i--){
+           while (!stack.isEmpty()&&stack.contains(stack.peek())&&map.get(stack.peek())!=0) {
+               System.out.println(stack.pop());
+           }
+           stack.push(s.charAt(i));
+           map.put(s.charAt(i),map.get(s.charAt(i))-1);
+       }
+       System.out.println(stack);
+       return sb.toString();
     }
     public static String reversePrefix(String word, char ch) {
         StringBuilder sb = new StringBuilder();
