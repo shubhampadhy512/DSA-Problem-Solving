@@ -12,25 +12,64 @@ public class stackprblm {
 //        int[] s1 = {73,73,73,73};
         System.out.println(removeDuplicateLetters(s));
     }
+//    second method for the 1081
+//    public static String removeDuplicateLetters(String s) {
+//        Stack<Character> stack = new Stack<>();
+//        HashMap<Character,Integer> map = new HashMap<>();
+//        int[] freq = new int[26];
+//        StringBuffer sb = new StringBuffer();
+//        int n = s.length();
+//        for(int i =0; i<n;i++){
+//            char c = s.charAt(i);
+//            map.put(c,map.getOrDefault(c,0)+1);
+//            freq[s.charAt(i)-'a']+=1;
+//        }
+//        for(int i =0; i<n;i++){
+//            map.put(s.charAt(i),map.get(s.charAt(i))-1);
+//            freq[s.charAt(i)-'a']-=1;
+//            while (!stack.isEmpty()&&!stack.contains(s.charAt(i))&&freq[stack.peek()-'a']!=0) {
+//                if(stack.peek()<s.charAt(i)){
+//                    break;
+//                }
+//                System.out.println(stack.pop());
+//                System.out.println(stack);
+//            }
+//            if(!stack.contains(s.charAt(i))) {
+//                stack.push(s.charAt(i));
+//            }
+//            System.out.println(stack);
+//        }
+//        for(char c:stack){
+//            sb.append(c);
+//        }
+//        return sb.toString();
+//    }
+//    the first method for the 1081
     public static String removeDuplicateLetters(String s) {
        Stack<Character> stack = new Stack<>();
        HashMap<Character,Integer> map = new HashMap<>();
        StringBuffer sb = new StringBuffer();
        int n = s.length();
        for(int i =0; i<n;i++){
-           char c = s.charAt(i);
-           map.put(c,map.getOrDefault(c,0)+1);
+           freq[s.charAt(i)-'a']+=1;
        }
-       System.out.println(map);
-       System.out.println(map.get('h'));
-       for(int i =n-1; i>=0;i--){
-           while (!stack.isEmpty()&&stack.contains(stack.peek())&&map.get(stack.peek())!=0) {
-               System.out.println(stack.pop());
-           }
-           stack.push(s.charAt(i));
+       for(int i =0; i<n;i++){
            map.put(s.charAt(i),map.get(s.charAt(i))-1);
+           while (!stack.isEmpty()&&!stack.contains(s.charAt(i))&&map.get(stack.peek)!=0) {
+               if(stack.peek()<s.charAt(i)){
+                   break;
+               }
+               System.out.println(stack.pop());
+               System.out.println(stack);
+           }
+           if(!stack.contains(s.charAt(i))) {
+               stack.push(s.charAt(i));
+           }
+           System.out.println(stack);
        }
-       System.out.println(stack);
+       for(char c:stack){
+           sb.append(c);
+       }
        return sb.toString();
     }
     public static String reversePrefix(String word, char ch) {
