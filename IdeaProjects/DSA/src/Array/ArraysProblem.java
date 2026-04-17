@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {4,1,2};
+        int[] arr2 = {0,0,0};
         int[] arr3 ={1,3,4,2};
         int[][] arr4 = {
                 {3,2,1,0,-1},
@@ -18,9 +18,32 @@ public class ArraysProblem {
 //        char[] arr = {'c','f','j'};
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
-        System.out.println(countNegatives(arr4));
+        System.out.println(longestOnes(arr2,0));
     }
-
+    public static int longestOnes(int[] nums, int k) {
+        int ans = 0;
+        int i =0;
+        int j=0;
+        int temp =0;
+        int n = nums.length;
+        while(i<n&&j<n){
+            if(temp<=k) {
+                if (nums[i] == 0) {
+                    temp++;
+                }
+                i++;
+            }else{
+                if(nums[j]==0){
+                    temp--;
+                    System.out.println(temp);
+                }
+                j++;
+            }
+            System.out.println(i+"---"+j);
+            ans = Math.max(ans,i-j-1);
+        }
+        return ans;
+    }
     public static int getMinDistance(int[] nums, int target, int start) {
         int n  = nums.length;
         int i=0;
