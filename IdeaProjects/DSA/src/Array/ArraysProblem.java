@@ -20,6 +20,7 @@ public class ArraysProblem {
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
         System.out.println(longestOnes(arr2,0));
     }
+//    not solved the prblm
     public static int longestOnes(int[] nums, int k) {
         int ans = 0;
         int i =0;
