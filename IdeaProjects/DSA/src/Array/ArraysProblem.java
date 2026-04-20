@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {0,0,0};
+        int[] arr2 = {0,0,0,0,1,1,1,1};
         int[] arr3 ={1,3,4,2};
         int[][] arr4 = {
                 {3,2,1,0,-1},
@@ -26,22 +26,23 @@ public class ArraysProblem {
         int i =0;
         int j=0;
         int temp =0;
+        boolean flag = false;
         int n = nums.length;
         while(i<n&&j<n){
-            if(temp<=k) {
-                if (nums[i] == 0) {
-                    temp++;
-                }
+            if (nums[i] == 0&&flag==false) {
+                temp++;
+                flag = true;
+            }
+            if(temp<=k){
                 i++;
+                flag = false;
             }else{
                 if(nums[j]==0){
                     temp--;
-                    System.out.println(temp);
                 }
                 j++;
             }
-            System.out.println(i+"---"+j);
-            ans = Math.max(ans,i-j-1);
+            ans = Math.max(ans,i-j);
         }
         return ans;
     }
