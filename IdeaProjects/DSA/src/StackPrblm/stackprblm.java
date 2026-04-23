@@ -9,9 +9,34 @@ public class stackprblm {
     public static void main(String[] args){
         String s = "bcabc";
 //        int[] s = {2,4};
-//        int[] s1 = {73,73,73,73};
-        System.out.println(removeDuplicateLetters(s));
+        int[] s1 = {5,4,3,2,1};
+        System.out.println(Arrays.toString(nextGreaterElements(s1)));
     }
+//    public static int[] nextGreaterElements(int[] nums) {
+//        Stack<Integer> st = new Stack<>();
+//        HashMap<Integer,Integer> map = new HashMap<>();
+//        int n = nums.length;
+//        int[] ans = new int [n];
+//        int i = n-1;
+//        while(i>=0){
+//            while(!st.isEmpty()&&st.peek()<nums[i]){
+//                st.pop();
+//            }
+//            if (!st.isEmpty()) {
+//                if(st.peek()>nums[i]) {
+//                    map.put(nums[i],st.peek());
+//                }
+//            }else{
+//                map.put(nums[i],-1);
+//            }
+//            st.push(nums[i]);
+//            i--;
+//        }
+//        for(int j = 0; j<n ; j++){
+//            ans[j]=map.get(nums[j]);
+//        }
+//        return ans;
+//    }
 //    second method for the 1081
     public static String removeDuplicateLetters(String s) {
         Stack<Character> stack = new Stack<>();
@@ -121,28 +146,28 @@ public class stackprblm {
         }
         return result;
     }
-    public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        int[] ans = new int[10000];
-        int[] res =new int[nums1.length];
-        Stack<Integer> st =new Stack<>();
-        int n1 =nums2.length;
-        int j =0;
-        for(int i = n1-1;i>=0;i--){
-            while(!st.isEmpty()&&st.peek()<=nums2[i]){
-                st.pop();
-            }
-            if (!st.isEmpty()) {
-                ans[nums2[i]] = st.peek();
-            } else {
-                ans[nums2[i]] = -1;
-            }
-            st.push(nums2[i]);
-        }
-        for(int i =0;i<nums1.length;i++){
-            res[i]=ans[nums1[i]];
-        }
-        return res;
-    }
+//    public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+//        int[] ans = new int[10000];
+//        int[] res =new int[nums1.length];
+//        Stack<Integer> st =new Stack<>();
+//        int n1 =nums2.length;
+//        int j =0;
+//        for(int i = n1-1;i>=0;i--){
+//            while(!st.isEmpty()&&st.peek()<=nums2[i]){
+//                st.pop();
+//            }
+//            if (!st.isEmpty()) {
+//                ans[nums2[i]] = st.peek();
+//            } else {
+//                ans[nums2[i]] = -1;
+//            }
+//            st.push(nums2[i]);
+//        }
+//        for(int i =0;i<nums1.length;i++){
+//            res[i]=ans[nums1[i]];
+//        }
+//        return res;
+//    }
 //    public static int[] dailyTemperatures(int[] temperatures) {
 //        int n = temperatures.length;
 //        int[] result = new int[n];

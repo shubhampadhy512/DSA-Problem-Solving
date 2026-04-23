@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {0,0,0,0,1,1,1,1};
+        int[] arr2 = {1,3,1,1,2};
         int[] arr3 ={1,3,4,2};
         int[][] arr4 = {
                 {3,2,1,0,-1},
@@ -18,9 +18,17 @@ public class ArraysProblem {
 //        char[] arr = {'c','f','j'};
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
-        System.out.println(longestOnes(arr2,0));
+        System.out.println(distance(arr2));
     }
-//    not solved the prblm
+    public static long[] distance(int[] nums) {
+        long[] ans = new long[nums.length];
+        int n = nums.length;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<n;i++){
+
+        }
+        return new long[]{-1,-1};
+    }
     public static int longestOnes(int[] nums, int k) {
         int ans = 0;
         int i =0;
