@@ -8,7 +8,17 @@ public class Maths {
     public static void main(String[] args) {
         int a =28;
         int b = 10;
-        System.out.println(checkPerfectNumber(a));
+        System.out.println(mirrorDistance(a));
+    }
+    public static int mirrorDistance(int n) {
+        int ans =0;
+        int temp = n;
+        while(temp>0){
+            ans = ans*10 + temp%10;
+            temp=temp/10;
+        }
+        temp=Math.abs(n-ans);
+        return temp ;
     }
     public static boolean checkPerfectNumber(int num) {
         int sum = 0;

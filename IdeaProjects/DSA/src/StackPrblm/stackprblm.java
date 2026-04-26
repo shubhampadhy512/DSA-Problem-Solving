@@ -12,31 +12,31 @@ public class stackprblm {
         int[] s1 = {5,4,3,2,1};
         System.out.println(Arrays.toString(nextGreaterElements(s1)));
     }
-//    public static int[] nextGreaterElements(int[] nums) {
-//        Stack<Integer> st = new Stack<>();
-//        HashMap<Integer,Integer> map = new HashMap<>();
-//        int n = nums.length;
-//        int[] ans = new int [n];
-//        int i = n-1;
-//        while(i>=0){
-//            while(!st.isEmpty()&&st.peek()<nums[i]){
-//                st.pop();
-//            }
-//            if (!st.isEmpty()) {
-//                if(st.peek()>nums[i]) {
-//                    map.put(nums[i],st.peek());
-//                }
-//            }else{
-//                map.put(nums[i],-1);
-//            }
-//            st.push(nums[i]);
-//            i--;
-//        }
-//        for(int j = 0; j<n ; j++){
-//            ans[j]=map.get(nums[j]);
-//        }
-//        return ans;
-//    }
+    public static int[] nextGreaterElements(int[] nums) {
+        Stack<Integer> st = new Stack<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int n = nums.length;
+        int[] ans = new int [n];
+        int i = n-1;
+        while(i>=0){
+            while(!st.isEmpty()&&st.peek()<nums[i]){
+                st.pop();
+            }
+            if (!st.isEmpty()) {
+                if(st.peek()>nums[i]) {
+                    map.put(nums[i],st.peek());
+                }
+            }else{
+                map.put(nums[i],-1);
+            }
+            st.push(nums[i]);
+            i--;
+        }
+        for(int j = 0; j<n ; j++){
+            ans[j]=map.get(nums[j]);
+        }
+        return ans;
+    }
 //    second method for the 1081
     public static String removeDuplicateLetters(String s) {
         Stack<Character> stack = new Stack<>();
