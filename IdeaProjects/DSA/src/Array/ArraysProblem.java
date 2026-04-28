@@ -18,16 +18,65 @@ public class ArraysProblem {
 //        char[] arr = {'c','f','j'};
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
-        System.out.println(distance(arr2));
+        System.out.println(Arrays.toString(distance(arr2)));
+    }
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);
+        int sum =0;
+        for(int i =0;i<nums.length;i+=2){
+            sum+=nums[i];
+        }
+        return sum;
+    }
+    public static int[] nextGreaterElements(int[] nums) {
+        int[] ans = new int[nums.length];
+        int i =0;
+        int j = i+1;
+        int n = nums.length;
+        while(i<n){
+            if(nums[i]>nums[j%n]){
+                while(i!=j%n){
+                    if(nums[i]<nums[j%n]){
+                        break;
+                    }else {
+                        j++;
+                    }
+                }
+                System.out.println(nums[j%n]+"---"+j%n);
+            }
+            System.out.println(nums[j%n]+"---"+j%n);
+            if(nums[i]<nums[j%n]){
+                ans[i]=nums[j%n];
+            }else{
+                ans[i]=-1;
+            }
+            System.out.println(ans[i]);
+            i++;
+            j=i+1;
+        }
+        return ans;
     }
     public static long[] distance(int[] nums) {
         long[] ans = new long[nums.length];
         int n = nums.length;
-        HashMap<Integer,Integer> map = new HashMap<>();
+        HashMap<Integer,List<Integer>> map = new HashMap<>();
         for(int i=0;i<n;i++){
-
+            map.computeIfAbsent(nums[i], k -> new ArrayList<>()).add(i);
         }
-        return new long[]{-1,-1};
+        for(int i=0;i<n;i++){
+            if(map.get(nums[i]).size()==1){
+                ans[i]=0;
+            }else{
+                int j=0;
+                int temp=0;
+                while(j<map.get(nums[i]).size()){
+                   temp=temp+Math.abs(i-map.get(nums[i]).get(j));
+                   j++;
+                }
+                ans[i]=temp;
+            }
+        }
+        return ans;
     }
     public static int longestOnes(int[] nums, int k) {
         int ans = 0;
