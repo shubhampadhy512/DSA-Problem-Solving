@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {1,3,1,1,2};
+        int[] arr2 = {1,1,1,1,1};
         int[] arr3 ={1,3,4,2};
         int[][] arr4 = {
                 {3,2,1,0,-1},
@@ -18,7 +18,7 @@ public class ArraysProblem {
 //        char[] arr = {'c','f','j'};
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
-        System.out.println(Arrays.toString(distance(arr2)));
+        System.out.println(Arrays.toString(nextGreaterElements(arr2)));
     }
     public int arrayPairSum(int[] nums) {
         Arrays.sort(nums);
@@ -29,32 +29,18 @@ public class ArraysProblem {
         return sum;
     }
     public static int[] nextGreaterElements(int[] nums) {
-        int[] ans = new int[nums.length];
-        int i =0;
-        int j = i+1;
         int n = nums.length;
-        while(i<n){
-            if(nums[i]>nums[j%n]){
-                while(i!=j%n){
-                    if(nums[i]<nums[j%n]){
-                        break;
-                    }else {
-                        j++;
-                    }
-                }
-                System.out.println(nums[j%n]+"---"+j%n);
-            }
-            System.out.println(nums[j%n]+"---"+j%n);
-            if(nums[i]<nums[j%n]){
-                ans[i]=nums[j%n];
-            }else{
-                ans[i]=-1;
-            }
-            System.out.println(ans[i]);
-            i++;
-            j=i+1;
-        }
-        return ans;
+       int[] res = new int[n];
+       for(int i = 0; i<n;i++){
+           res[i]=-1;
+           for(int j =1 ; j<n;j++){
+               if(nums[(i+j)%n]>nums[i]){
+                   res[i]=nums[(i+j)%n];
+                   break;
+               }
+           }
+       }
+        return res;
     }
     public static long[] distance(int[] nums) {
         long[] ans = new long[nums.length];

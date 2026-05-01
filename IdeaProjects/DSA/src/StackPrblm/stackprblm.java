@@ -9,31 +9,23 @@ public class stackprblm {
     public static void main(String[] args){
         String s = "bcabc";
 //        int[] s = {2,4};
-        int[] s1 = {5,4,3,2,1};
+        int[] s1 = {5,4,1,2,3,6};
         System.out.println(Arrays.toString(nextGreaterElements(s1)));
     }
     public static int[] nextGreaterElements(int[] nums) {
         Stack<Integer> st = new Stack<>();
-        HashMap<Integer,Integer> map = new HashMap<>();
         int n = nums.length;
         int[] ans = new int [n];
-        int i = n-1;
-        while(i>=0){
-            while(!st.isEmpty()&&st.peek()<nums[i]){
+        int i = (n-1)*2;
+        while(i>=0) {
+            while (!st.isEmpty() && st.peek() <= nums[i%n]) {
                 st.pop();
             }
-            if (!st.isEmpty()) {
-                if(st.peek()>nums[i]) {
-                    map.put(nums[i],st.peek());
-                }
-            }else{
-                map.put(nums[i],-1);
-            }
-            st.push(nums[i]);
+            if(!st.isEmpty()){
+                ans[i%n]=st.peek();
+            }else ans[i%n]=-1;
+            st.push(nums[i%n]);
             i--;
-        }
-        for(int j = 0; j<n ; j++){
-            ans[j]=map.get(nums[j]);
         }
         return ans;
     }
