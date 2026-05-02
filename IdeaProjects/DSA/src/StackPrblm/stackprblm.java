@@ -9,8 +9,28 @@ public class stackprblm {
     public static void main(String[] args){
         String s = "bcabc";
 //        int[] s = {2,4};
-        int[] s1 = {5,4,1,2,3,6};
-        System.out.println(Arrays.toString(nextGreaterElements(s1)));
+        int[] s1 = {9, 7, 5, 3, 1};
+        System.out.println(Arrays.toString(replaceElements(s1)));
+    }
+    public static int[] replaceElements(int[] arr) {
+        int n = arr.length;
+        int[] res = new int[n];
+        Stack<Integer> st = new Stack<>();
+        int i = n-2;
+        int pre=arr[n-1];
+        res[n-1]=-1;
+        while(i>=0){
+            while(!st.isEmpty() && st.peek()<=arr[i]){
+                st.pop();
+            }
+            st.push(arr[i]);
+            if(pre<st.peek()){
+                res[i]=pre;
+                pre=st.peek();
+            }else res[i]=pre;
+            i--;
+        }
+        return res;
     }
     public static int[] nextGreaterElements(int[] nums) {
         Stack<Integer> st = new Stack<>();
