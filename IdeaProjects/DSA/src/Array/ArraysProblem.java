@@ -20,6 +20,22 @@ public class ArraysProblem {
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
         System.out.println(Arrays.toString(nextGreaterElements(arr2)));
     }
+//    not submitted in leetcode
+    public static int[] replaceElements(int[] arr) {
+        int n = arr.length;
+        int[] res = new int[n];
+        res[n-1] = -1;
+         int i = n-2;
+         int max = arr[n-1];
+         while(i>=0){
+             if(max<arr[i]){
+                 res[i]=max;
+                 max=arr[i];
+             }else res[i]=max;
+             i--;
+         }
+        return res;
+    }
     public int arrayPairSum(int[] nums) {
         Arrays.sort(nums);
         int sum =0;
@@ -42,6 +58,7 @@ public class ArraysProblem {
        }
         return res;
     }
+//    not done
     public static long[] distance(int[] nums) {
         long[] ans = new long[nums.length];
         int n = nums.length;
