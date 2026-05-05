@@ -9,10 +9,44 @@ import java.util.Stack;
 
 public class StringsProblems {
     public static void main(String[] args) {
-        String s = "helloworld";
+        String s = "MCMXCIV";
         String s1 = "01";
 //        String[] s = {"cba","efg","dgi"};
-        System.out.println(reversePrefix(s,'a'));
+        System.out.println(romanToInt(s));
+    }
+    public static int romanToInt(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        map.put('I',1);
+        map.put('V',5);
+        map.put('X',10);
+        map.put('L',50);
+        map.put('C',100);
+        map.put('D',500);
+        map.put('M',1000);
+        int ans = 0;
+        int n = s.length();
+        int i = n-1;
+        int j = i-1;
+//        int k = 0;
+        boolean flag = true;
+        while(i>=0&&j>=0){
+            if(map.get(s.charAt(j))<map.get(s.charAt(i))){
+                ans += map.get(s.charAt(i))-map.get(s.charAt(j));
+                flag = false;
+            }else{
+                ans = ans + map.get(s.charAt(i));
+                flag = true;
+            }
+            System.out.println(ans+"_____"+i);
+            i-=2;
+            j-=2;
+        }
+        if(flag){
+            ans = ans + map.get(s.charAt(i));
+        }else{
+            ans  = ans - map.get(s.charAt(i));
+        }
+        return ans;
     }
     public static String reversePrefix(String word, char ch) {
         StringBuilder sb = new StringBuilder();
