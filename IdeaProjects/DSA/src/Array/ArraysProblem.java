@@ -6,11 +6,27 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {1,1,1,1,1};
+        int[] arr2 = {2,1,3};
         int[] arr3 ={1,3,4,2};
         int[][] arr4 = {
-                {3,2,1,0,-1},
-                {-1,-2,-3,-4,-5}
+//                {1,2,3,4,5,6,7},
+//                {8,9,10,11,12,13,14},
+//                {15,16,17,18,19,20,21},
+//                {22,23,24,25,26,27,28},
+//                {29,30,31,32,33,34,35},
+//                {36,37,38,39,40,41,42},
+//                {43,44,45,46,47,48,49}
+//                {1,2,3,4},
+//                {5,6,7,8},
+//                {9,10,11,12},
+//                {13,14,15,16}
+//                {1,2,3,4,5},
+//                {6,7,8,9,10},
+//                {11,12,13,14,15},
+//                {16,17,18,19,20},
+//                {21,22,23,24,25}
+//                { 1,2,3},{4,5,6},{7,8,9}
+                {1,2},{3,4}
         };
 //        int[][]arr2 ={{1,3,5,7},{10,11,16,20},{23,30,34,60}};
         String a="3876620623801494171";
@@ -18,7 +34,88 @@ public class ArraysProblem {
 //        char[] arr = {'c','f','j'};
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
-        System.out.println(Arrays.toString(nextGreaterElements(arr2)));
+        rotate(arr4);
+//        System.out.println(check(arr2));
+    }
+    public boolean findRotation(int[][]mat,int[][] target){
+        for(int i =0;i<5;i++){
+            if(Arrays.deepEquals(mat,target)){
+                return true;
+            }
+            mat = rotate(mat);
+        }
+        return false;
+    }
+    public static int[][] rotate(int[][] matrix) {
+        int n1 = matrix.length-1;
+        for(int k =0;k<=n1/2;k++){
+            int i = k;
+            int j = n1-k;
+            while(i<j){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[k][i];
+                int temp2 = matrix[j][n1-i];
+                matrix[j][n1-i] = temp;
+                temp = matrix[n1-i][k];
+                matrix[n1-i][k] = temp2;
+                matrix[k][i] = temp;
+                i++;
+            }
+        }
+        return matrix;
+   }
+//    done
+    public static boolean check(int[] nums) {
+        int n = nums.length;
+        int i = 0 ;
+        int j = i+1;
+        boolean ans = true;
+        while (i < n) {
+            if(nums[i]>nums[j%n]){
+                ans = false;
+                break;
+            }
+            i++;
+            j++;
+        }
+        i++;
+        j++;
+        if(i==n)ans = true;
+        while(i<n){
+            if(nums[i]>nums[j%n]){
+                ans = false;
+                break;
+            }else ans = true;
+            i++;
+            j++;
+        }
+        return ans;
+    }
+//    not done
+    public static long minimumTime(int[] time, int totalTrips) {
+        int n = time.length;
+        long ans = 0;
+        for(int i : time){
+            ans+=time[i];
+        }
+        return ans;
+    }
+//    not done
+    public static int jump(int[] nums) {
+        int ans =Integer.MAX_VALUE;
+        int n = nums.length;
+        for (int i =0 ; i<n-1;i++){
+            int j=nums[i];
+            int count = 0 ;
+            while(j<n-1) {
+                j += nums[j];
+                if (j < n&&nums[j]==0) break;
+                if(j<n) count++;
+                System.out.println(i+"----"+j+""+count);
+            }
+            if(j==n-1&&ans>count+i)ans =count+i;
+        }
+        return ans;
     }
 //    not submitted in leetcode
     public static int[] replaceElements(int[] arr) {

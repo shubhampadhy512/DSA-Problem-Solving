@@ -9,11 +9,27 @@ import java.util.Stack;
 
 public class StringsProblems {
     public static void main(String[] args) {
-        String s = "MCMXCIV";
+        String s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String s1 = "01";
 //        String[] s = {"cba","efg","dgi"};
-        System.out.println(romanToInt(s));
+        System.out.println(numberOfSpecialChars(s));
     }
+    
+    public static int numberOfSpecialChars(String word) {
+        int[] arr = new int[58];
+        int n = word.length();
+        int ans = 0;
+        for(int i = 0; i<n ; i++){
+            arr[word.charAt(i)-'A']=1;
+        }
+        for(int i = 0 ; i<26 ; i++){
+            if(arr[i]==1&&arr[i+32]==1){
+                ans++;
+            }
+        }
+        return ans;
+    }
+//    not done
     public static int romanToInt(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
         map.put('I',1);
@@ -25,27 +41,23 @@ public class StringsProblems {
         map.put('M',1000);
         int ans = 0;
         int n = s.length();
-        int i = n-1;
-        int j = i-1;
-//        int k = 0;
-        boolean flag = true;
-        while(i>=0&&j>=0){
-            if(map.get(s.charAt(j))<map.get(s.charAt(i))){
-                ans += map.get(s.charAt(i))-map.get(s.charAt(j));
-                flag = false;
-            }else{
-                ans = ans + map.get(s.charAt(i));
+        int i =0;
+        int j = i+1;
+        boolean flag = false;
+        while(j<n){
+            if(map.get(s.charAt(i))<map.get(s.charAt(j))){
+                ans += map.get(s.charAt(j)) - map.get(s.charAt(i));
                 flag = true;
+                i++;
+            }else{
+                ans += map.get(s.charAt(i));
+                flag = false;
             }
-            System.out.println(ans+"_____"+i);
-            i-=2;
-            j-=2;
+            i++;
+            j++;
+            System.out.println(ans);
         }
-        if(flag){
-            ans = ans + map.get(s.charAt(i));
-        }else{
-            ans  = ans - map.get(s.charAt(i));
-        }
+        if(!flag&&i>n)ans+=map.get(s.charAt(i));
         return ans;
     }
     public static String reversePrefix(String word, char ch) {
