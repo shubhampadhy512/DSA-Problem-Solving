@@ -6,9 +6,9 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {2,1,3};
+        int[] arr2 = {1,1,1,1,1};
         int[] arr3 ={1,3,4,2};
-        int[][] arr4 = {
+//        int[][] arr4 = {
 //                {1,2,3,4,5,6,7},
 //                {8,9,10,11,12,13,14},
 //                {15,16,17,18,19,20,21},
@@ -26,16 +26,54 @@ public class ArraysProblem {
 //                {16,17,18,19,20},
 //                {21,22,23,24,25}
 //                { 1,2,3},{4,5,6},{7,8,9}
-                {1,2},{3,4}
-        };
+//                {1,2},{3,4}
+//        };
 //        int[][]arr2 ={{1,3,5,7},{10,11,16,20},{23,30,34,60}};
-        String a="3876620623801494171";
-        String b = "6529364523802684779";
+//        String a="3876620623801494171";
+//        String b = "6529364523802684779";
 //        char[] arr = {'c','f','j'};
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
-        rotate(arr4);
-//        System.out.println(check(arr2));
+//        rotate(arr4);
+        System.out.println(maxSubarrayLength(arr2,1));
+    }
+    public static int maxSubarrayLength(int[] nums, int k) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int i =0;
+        int j=0;
+        int n = nums.length;
+        int count = 0;
+        while(i<n){
+            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+            while(map.get(nums[i])>k&&i>=j){
+                map.put(nums[j],map.get(nums[j])-1);
+                j++;
+            }
+            if(i-j+1>count)count=i-j+1;
+            i++;
+        }
+        return count;
+    }
+    public static int maximumProduct(int[] nums) {
+        int fmax = nums[0];
+        int smax = nums[1];
+        int tmax = nums[2];
+        int ans = fmax*smax*tmax;
+        int len  = nums.length;
+        System.out.println(ans+"______"+((-9)*(-8)*1));
+        for(int i = 3; i<len;i++){
+            if(nums[i]>fmax){
+                fmax=nums[i];
+            }else if(nums[i]>smax){
+                smax=nums[i];
+            }else if(nums[i]>tmax){
+                tmax=nums[i];
+            }
+            int pro = fmax*smax*tmax;
+            if(ans<pro)ans = pro;
+        }
+         System.out.println(fmax+"___"+smax+"____"+tmax);
+        return ans;
     }
     public boolean findRotation(int[][]mat,int[][] target){
         for(int i =0;i<5;i++){

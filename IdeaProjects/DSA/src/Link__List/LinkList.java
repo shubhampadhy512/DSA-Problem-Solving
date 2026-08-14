@@ -326,33 +326,29 @@ public class LinkList {
 //        return ans;
 //    }
 //    second method
-public static LinkList MergeDuplicated(LinkList list1, LinkList list2){
-        LinkList ans = new LinkList();
-        Node temp = ans.head;
-        while(temp!= null && list2!=null){
-        }
-        return ans;
-    }
+//public static LinkList MergeDuplicated(LinkList list1, LinkList list2){
+//
+//    }
     public static void main() {
         LinkList list = new LinkList();
-        LinkList list2 = new LinkList();
-        list.addLast(1);
+//        LinkList list2 = new LinkList();
         list.addLast(1);
         list.addLast(2);
-        list.addLast(2);
+        list.addLast(3);
         list.addLast(4);
-        list.addLast(5);
-        list2.addLast(1);
-        list2.addLast(2);
-        list2.addLast(3);
-        list2.addLast(4);
-        list2.addLast(13);
-        list2.addLast(14);
+        list.addLast(6);
+        list.addLast(7);
+//        list2.addLast(1);
+//        list2.addLast(2);
+//        list2.addLast(3);
+//        list2.addLast(4);
+//        list2.addLast(13);
+//        list2.addLast(14);
 //        list.display();
 //        list.RemoveDuplicated();
 //        list.display();
-        list2 = MergeDuplicated(list,list2);
-        list2.display();
+//        list2 = MergeDuplicated(list,list2);
+//        list2.display();
     }
 
 }

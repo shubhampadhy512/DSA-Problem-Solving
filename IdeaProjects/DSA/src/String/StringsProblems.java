@@ -9,12 +9,32 @@ import java.util.Stack;
 
 public class StringsProblems {
     public static void main(String[] args) {
-        String s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String s = "ababab";
         String s1 = "01";
 //        String[] s = {"cba","efg","dgi"};
-        System.out.println(numberOfSpecialChars(s));
+        System.out.println(maximumLengthSubstring(s));
     }
-    
+    public static int maximumLengthSubstring(String s) {
+        int n = s.length();
+        int[] freq = new int[26];
+        int i =0;
+        int j = 0;
+        int count =0;
+        while(i<n){
+            freq[s.charAt(i)-'a']++;
+            if(freq[s.charAt(i)-'a']>2){
+                while(s.charAt(i)!=s.charAt(j)){
+                    freq[s.charAt(j)-'a']--;
+                    j++;
+                }
+                freq[s.charAt(j)-'a']--;
+                j++;
+            }
+            if(i-j+1>count) count = i-j+1;
+            i++;
+        }
+        return count;
+    }
     public static int numberOfSpecialChars(String word) {
         int[] arr = new int[58];
         int n = word.length();

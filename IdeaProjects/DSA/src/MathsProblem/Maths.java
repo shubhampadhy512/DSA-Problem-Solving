@@ -6,9 +6,46 @@ import java.lang.Math;
 public class Maths {
 
     public static void main(String[] args) {
-        int a =28;
-        int b = 10;
-        System.out.println(mirrorDistance(a));
+        int a =15;
+        int b = 3;
+        System.out.println(smallestNumber(a,b));
+    }
+    public static int smallestNumber(int n, int t) {
+        int temp= n;
+        int pro = 1;
+        while(temp!=0){
+            pro*=temp%10;
+            temp/=10;
+            if(pro%t==0&&temp==0)return n;
+            if(pro%t!=0&&temp==0){
+                n++;
+                temp = n;
+                pro=1;
+            }
+        }
+        return 0;
+    }
+    public static int maxProduct(int n) {
+        int temp = n;
+        int firstmax = temp%10;
+        temp /=10;
+        int secondmax = 0;
+        int i = 0;
+        while(temp>0){
+            int dummy = temp%10;
+            if(dummy>firstmax){
+                if(firstmax>secondmax){
+                    secondmax = firstmax;
+                }
+                firstmax = dummy;
+            }else if(dummy>secondmax && dummy<=firstmax){
+                secondmax = dummy;
+            }
+            temp /=10;
+            i++;
+        }
+        System.out.println(firstmax+"____"+secondmax);
+        return firstmax*secondmax;
     }
     public static int mirrorDistance(int n) {
         int ans =0;
