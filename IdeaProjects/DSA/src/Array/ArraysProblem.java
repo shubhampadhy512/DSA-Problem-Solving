@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {1,1,1,1,1};
+        int[] arr2 = {1,2,3};
         int[] arr3 ={1,3,4,2};
 //        int[][] arr4 = {
 //                {1,2,3,4,5,6,7},
@@ -35,7 +35,22 @@ public class ArraysProblem {
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
 //        rotate(arr4);
-        System.out.println(maxSubarrayLength(arr2,1));
+        System.out.println(longestSubsequence(arr2));
+    }
+    public static int longestSubsequence(int[] nums) {
+        int ans=0;
+        int i =0;
+        int j=0;
+        int n = nums.length;
+        while(i<n){
+            ans^=nums[i];
+            if(nums[i]==0)j++;
+            i++;
+        }
+        System.out.println(ans);
+        if(ans==0&&j!=n)return n-1;
+        if(j==n)return 0;
+        return n;
     }
     public static int maxSubarrayLength(int[] nums, int k) {
         HashMap<Integer,Integer> map = new HashMap<>();
