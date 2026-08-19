@@ -37,6 +37,17 @@ public class ArraysProblem {
 //        rotate(arr4);
         System.out.println(longestSubsequence(arr2));
     }
+//    public static int diagonalSum(int[][] mat) {
+//        int i = 0;
+//        int row = mat.length;
+//        int sum =0;
+//        while(i<row){
+//            sum+=mat[i][i]+mat[i][row-i-1];
+//            if(i==row-i-1)sum-=mat[i][i];
+//            i++;
+//        }
+//        return sum;
+//    }
     public static int longestSubsequence(int[] nums) {
         int ans=0;
         int i =0;
