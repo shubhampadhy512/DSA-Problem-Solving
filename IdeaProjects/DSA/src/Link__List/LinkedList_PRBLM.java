@@ -190,3 +190,37 @@
 //    }
 //    return null;
 //}
+//public ListNode swapNodes(ListNode head, int k) {
+//    ListNode temp = head;
+//    int len=0;
+//    while(temp!=null){
+//        temp = temp.next;
+//        len++;
+//    }
+//    if(len==1)return head;
+//    ListNode s = head;
+//    for(int i=1;i<k;i++){
+//        s = s.next;
+//    }
+//    len = len - k;
+//    System.out.println(s.val);
+//    if(k<=len){
+//        ListNode last = s;
+//        for(int i=k;i<=len;i++){
+//            last = last.next;
+//        }
+//        int temp2 = s.val;
+//        s.val = last.val;
+//        last.val = temp2;
+//    }else{
+//        ListNode last = head;
+//        for(int i=0;i<len;i++){
+//            last = last.next;
+//        }
+//        int temp2 = s.val;
+//        s.val = last.val;
+//        last.val = temp2;
+//    }
+//    // System.out.println(last.val);
+//    return head;
+//}
