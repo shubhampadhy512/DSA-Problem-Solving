@@ -224,3 +224,69 @@
 //    // System.out.println(last.val);
 //    return head;
 //}
+//public ListNode removeElements(ListNode head, int val) {
+//    ListNode pre = head;
+//    if(head==null)return head;
+//    ListNode temp = pre.next;
+//    while(temp!=null){
+//        if(head==pre&&pre.val==val){
+//            head=temp;
+//            pre = head;
+//        }else if(temp.val==val){
+//            pre.next = temp.next;
+//        }else{
+//            pre = temp;
+//        }
+//        temp = temp.next;
+//    }
+//    if(pre==head&&pre.val==val)return null;
+//    if(pre.val==val){
+//        pre.next = temp;
+//    }
+//    return head;
+//}
+//public ListNode middleNode(ListNode head) {
+//        ListNode temp = head;
+//        int len=0;
+//        while(temp!=null){
+//            temp = temp.next;
+//            len++;
+//        }
+//        ListNode midd = head;
+//        for(int i = 0;i<len/2;i++){
+//            midd = midd.next;
+//        }
+//        return midd;
+//    }
+//public void reorderList(ListNode head) {
+//    ListNode temp = head;
+//    int len=1;
+//    while(temp.next!=null){
+//        temp = temp.next;
+//        len++;
+//    }
+//    if(len>2){
+//        ListNode midd = head;
+//        int i = 1;
+//        while(i<=len/2){
+//            midd = midd.next;
+//            i++;
+//        }
+//        ListNode temp2 = head.next;
+//        head.next = temp;
+//        temp.next = temp2;
+//        int n = len-i;
+//        for(int j = 1 ; j<n;j++){
+//            temp = midd;
+//            for(int k = j; k<n;k++){
+//                temp = temp.next;
+//            }
+//            System.out.println(temp.val);
+//            ListNode dummy = temp2.next;
+//            temp2.next = temp;
+//            temp.next = dummy;
+//            temp2 = dummy;
+//        }
+//        midd.next = null;
+//    }
+//}
