@@ -290,3 +290,41 @@
 //        midd.next = null;
 //    }
 //}
+//public ListNode deleteDuplicates(ListNode head) {
+//    ListNode pre = head;
+//    if(head==null||head.next==null)return head;
+//    ListNode temp = head.next;
+//    boolean flag = false;
+//    while(temp.next!=null){
+//        if(temp.val==temp.next.val){
+//            temp.next= temp.next.next;
+//            flag=true;
+//        }
+//        else if(head.val==temp.val){
+//            head = temp.next;
+//            pre = head;
+//            temp = pre.next;
+//            flag = false;
+//            if(temp==null)break;
+//        }
+//        else if(flag){
+//            pre.next=temp.next;
+//            temp = temp.next;
+//            flag = false;
+//            if(temp.next!=null&&temp.val!=temp.next.val){
+//                pre = temp;
+//                temp = temp.next;
+//            }
+//        }else{
+//            pre = temp;
+//            temp = temp.next;
+//            flag = false;
+//        }
+//    }
+//    if(temp!=null){
+//        if(head.val==temp.val)return null;
+//    }
+//    if(flag)pre.next=null;
+//    return head;
+//}
+//
