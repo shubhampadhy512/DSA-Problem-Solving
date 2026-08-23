@@ -327,4 +327,40 @@
 //    if(flag)pre.next=null;
 //    return head;
 //}
-//
+//public ListNode partition(ListNode head, int x) {
+//        if(head==null||head.next==null)return head;
+//        ListNode pre = null;
+//        ListNode less = head;
+//        while(less!=null){
+//            if(less.val<x){
+//                if(pre!=null){
+//                    pre.next = less.next;
+//                    less.next = head;
+//                    head = less;
+//                }else{
+//                    pre = less;
+//                }
+//                break;
+//            }
+//            pre=less;
+//            less = less.next;
+//        }
+//        if(less==null)return head;
+//        while(pre.next!=null){
+//            if(pre.next.val==less.next.val&&pre.next.val<x){
+//                pre = pre.next;
+//                less = less.next;
+//                continue;
+//            }
+//            if(pre!=null&&pre.next.val<x){
+//                ListNode dummy = pre.next;
+//                pre.next = dummy.next;
+//                dummy.next = less.next;
+//                less.next = dummy;
+//                less = dummy;
+//                continue;
+//            }
+//            pre = pre.next;
+//        }
+//        return head;
+//    }
