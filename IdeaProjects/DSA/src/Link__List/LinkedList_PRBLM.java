@@ -364,3 +364,16 @@
 //        }
 //        return head;
 //    }
+//second method of found the middle of the linked List
+
+// public ListNode middleNode(ListNode head) {
+//        ListNode slow =head;
+//        ListNode fast = head;
+//
+//        while(fast!=null && fast.next!=null){
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//
+//        return slow;
+//    }
