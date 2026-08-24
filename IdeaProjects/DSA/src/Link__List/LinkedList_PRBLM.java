@@ -377,3 +377,33 @@
 //
 //        return slow;
 //    }
+//public ListNode deleteMiddle(ListNode head) {
+//        if(head.next==null)return null;
+//        ListNode temp = head;
+//        int len = 0;
+//        while(temp!=null){
+//            temp = temp.next;
+//            len++;
+//        }
+//        temp = head;
+//        for(int j = 1 ; j<len/2;j++){
+//            temp = temp.next;
+//        }
+//        if(temp.next!=null)temp.next = temp.next.next;
+//        else temp.next=null;
+//        return head;
+//    }
+// Second method of 2095
+//public ListNode deleteMiddle(ListNode head) {
+//        if(head.next==null)return null;
+//        ListNode slow = head;
+//        ListNode fast = head.next;
+//        ListNode pre = null;
+//        while(slow!=null&&fast!=null){
+//            pre = slow;
+//            slow = slow.next;
+//            if(fast.next==null)fast = fast.next;
+//            else fast = fast.next.next;
+//        }
+//        pre.next = slow.next;
+//        return head;
