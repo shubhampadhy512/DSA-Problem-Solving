@@ -407,3 +407,37 @@
 //        }
 //        pre.next = slow.next;
 //        return head;
+//public ListNode doubleIt(ListNode head) {
+//        ListNode multi = head;
+//        int len=1;
+//        int carry = 0;
+//        while(multi.next!=null){
+//            multi = multi.next;
+//            len++;
+//        }
+//        if(multi.val*2>9){
+//            multi.val = (multi.val*2)%10;
+//            carry = 1;
+//        }else {
+//            multi.val = multi.val*2;
+//        }
+//        ListNode dummy = head;
+//        for(int i =1;i<len;i++){
+//            while(dummy.next!=multi)dummy = dummy.next;
+//            if(dummy.val*2+carry>9){
+//                dummy.val = (dummy.val*2+carry)%10;
+//                carry = 1;
+//            }else{
+//                dummy.val = dummy.val*2+carry;
+//                carry = 0;
+//            }
+//            multi = dummy;
+//            dummy=head;
+//        }
+//        if(carry==1){
+//            dummy = new ListNode(1);
+//            dummy.next = head;
+//            head = dummy;
+//        }
+//        return head;
+//    }
