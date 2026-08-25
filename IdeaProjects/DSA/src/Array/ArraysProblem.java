@@ -48,6 +48,22 @@ public class ArraysProblem {
 //        }
 //        return sum;
 //    }
+//public static int missingMultiple(int[] nums, int k) {
+//    int[] freq = new int[101];
+//    int i =0;
+//    while(i<nums.length){
+//        if(nums[i]%k==0){
+//            freq[nums[i]]=1;
+//        }
+//        i++;
+//    }
+//    i = k;
+//    while(i<101){
+//        if(freq[i]==0)return i;
+//        i+=k;
+//    }
+//    return i;
+//}
     public static int longestSubsequence(int[] nums) {
         int ans=0;
         int i =0;
