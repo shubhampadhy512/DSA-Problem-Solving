@@ -445,6 +445,7 @@
 //    node.val = node.next.val;
 //    node.next = node.next.next;
 //}
+//it's not a optimal approach
 //public ListNode reverseList(ListNode head) {
 //        if(head==null||head.next==null)return head;
 //        Stack<ListNode> stack = new Stack<>();
