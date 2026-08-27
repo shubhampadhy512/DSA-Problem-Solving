@@ -463,4 +463,51 @@
 //        temp.next = null;
 //        return head;
 //    }
-//2181
+//public ListNode mergeNodes(ListNode head) {
+//        ListNode temp = head;
+//        int sum =0;
+//        ListNode ans = new ListNode();
+//        int count = 0;
+//        boolean flag = false;
+//        while(temp!=null){
+//            if(temp.val==0){
+//                if(sum!=0&&count==0){
+//                    ans = new ListNode(sum);
+//                    head = ans;
+//                    count++;
+//                }else if(sum!=0){
+//                    ans.next = new ListNode(sum);
+//                    ans = ans.next;
+//                }
+//                sum = 0;
+//                flag=false;
+//            }else{
+//                flag=true;
+//            }
+//            if(flag){
+//                sum+=temp.val;
+//            }
+//            temp =temp.next;
+//        }
+//        return head;
+//    }
+// optimal approach of 2181
+//  public ListNode mergeNodes(ListNode head) {
+//        ListNode temp = head;
+//        int sum =0;
+//        ListNode ans = new ListNode(0);
+//        ans.next = head;
+//        while(temp!=null){
+//            if(temp.val==0){
+//                if(sum!=0){
+//                    ans = ans.next;
+//                    ans.val = sum;
+//                }
+//                sum=0;
+//            }
+//            sum+=temp.val;
+//            temp = temp.next;
+//        }
+//        ans.next = temp;
+//        return head;
+//    }
