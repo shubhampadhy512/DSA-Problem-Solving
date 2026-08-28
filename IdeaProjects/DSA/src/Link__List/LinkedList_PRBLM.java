@@ -511,3 +511,27 @@
 //        ans.next = temp;
 //        return head;
 //    }
+//public ListNode removeNodes(ListNode head) {
+//        ListNode temp = head;
+//        Stack<ListNode> stack = new Stack<>();
+//        while(temp!=null){
+//            while(!stack.isEmpty()&&stack.peek().val<temp.val){
+//                 stack.pop();
+//            }
+//            stack.push(temp);
+//            temp = temp.next;
+//        }
+//        if(!stack.isEmpty()){
+//            head = stack.get(0);
+//        }
+//        while(!stack.isEmpty()){
+//            if(stack.peek()==head){
+//                head.next = temp;
+//            }else{
+//                stack.peek().next = temp;
+//                temp = stack.peek();
+//            }
+//            stack.pop();
+//        }
+//        return head;
+//    }
