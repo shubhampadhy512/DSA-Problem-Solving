@@ -535,3 +535,21 @@
 //        }
 //        return head;
 //    }
+//public ListNode oddEvenList(ListNode head) {
+//        ListNode odd = head;
+//        if(head==null)return head;
+//        ListNode even = head.next;
+//        if(even==null||even.next==null)return head;
+//        ListNode evenHead = even;
+//        int i =0;
+//        while(odd!=null&&even!=null){
+//            odd.next = even.next;
+//            if(odd.next!=null)even.next = odd.next.next;
+//            else even.next = odd.next;
+//            if(even.next==null&&odd.next==null)break;
+//            odd = odd.next;
+//            even = even.next;
+//        }
+//        odd.next = evenHead;
+//        return head;
+//    }
