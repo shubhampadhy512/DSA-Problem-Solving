@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {1,2,3};
+        int[] arr2 = {11,0,5,12};
         int[] arr3 ={1,3,4,2};
 //        int[][] arr4 = {
 //                {1,2,3,4,5,6,7},
@@ -35,7 +35,7 @@ public class ArraysProblem {
 //        rotate(arr1,5);
 //        System.out.println(String.valueOf(Long.parseLong(a) + Long.parseLong(b)));
 //        rotate(arr4);
-        System.out.println(longestSubsequence(arr2));
+        System.out.println(minimumDeletions(arr2));
     }
 //    public static int diagonalSum(int[][] mat) {
 //        int i = 0;
@@ -64,6 +64,32 @@ public class ArraysProblem {
 //    }
 //    return i;
 //}
+   public static int minimumDeletions(int[] nums) {
+       int n = nums.length;
+       if(n==1)return 1;
+        int min = 0;
+        int max = 0;
+        int i = 0;
+        while(i<n) {
+            if (nums[min] > nums[i]) {
+                min = i;
+            } else if (nums[max] < nums[i]) {
+                max = i;
+            }
+            i++;
+        }
+        if(n%2!=0&&min==n/2||max==n/2){
+            return n/2+1;
+        }
+       if((min>n/2&&max>n/2)||(min<n/2&&max<n/2)) {
+           min = Math.min(min + 1, n - min);
+           max = Math.min(max + 1, n - max);
+           return Math.max(min, max);
+       }
+       min = Math.min(min + 1, n - min);
+       max = Math.min(max + 1, n - max);
+       return min+max;
+   }
     public static int longestSubsequence(int[] nums) {
         int ans=0;
         int i =0;
