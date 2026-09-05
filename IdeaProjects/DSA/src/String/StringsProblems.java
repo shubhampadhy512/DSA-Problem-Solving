@@ -9,10 +9,23 @@ import java.util.Stack;
 
 public class StringsProblems {
     public static void main(String[] args) {
-        String s = "ababab";
+        String s = "abababe";
         String s1 = "01";
 //        String[] s = {"cba","efg","dgi"};
-        System.out.println(maximumLengthSubstring(s));
+        System.out.println(firstUniqChar(s));
+    }
+    public static int firstUniqChar(String s) {
+        int[] freq = new int[26];
+        int n = s.length();
+        for(int i = 0; i<n;i++) {
+            freq[s.charAt(i) - 'a'] += 1;
+        }
+        for(int i =0;i<n;i++){
+            if(freq[s.charAt(i)-'a']==1){
+                return i;
+            }
+        }
+        return -1;
     }
     public static int maximumLengthSubstring(String s) {
         int n = s.length();

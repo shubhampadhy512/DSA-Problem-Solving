@@ -6,7 +6,7 @@ import java.lang.Math;
 public class ArraysProblem {
     public static void main(String[] args) {
 //        String[] arr1 = {"eat","tea","tan","ate","nat","bat"};
-        int[] arr2 = {11,0,5,12};
+        int[] arr2 = {5, 4, 3, 1, 2, 6};
         int[] arr3 ={1,3,4,2};
 //        int[][] arr4 = {
 //                {1,2,3,4,5,6,7},
@@ -78,7 +78,7 @@ public class ArraysProblem {
             }
             i++;
         }
-        if(n%2!=0&&min==n/2||max==n/2){
+        if(n%2!=0&&(min==n/2||max==n/2)){
             return n/2+1;
         }
        if((min>n/2&&max>n/2)||(min<n/2&&max<n/2)) {
