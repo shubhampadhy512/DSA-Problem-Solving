@@ -14,19 +14,35 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
-    public static int firstUniqChar(String s) {
-        int[] freq = new int[26];
-        int n = s.length();
-        for(int i = 0; i<n;i++) {
-            freq[s.charAt(i) - 'a'] += 1;
-        }
-        for(int i =0;i<n;i++){
-            if(freq[s.charAt(i)-'a']==1){
-                return i;
-            }
-        }
-        return -1;
-    }
+//        public char findTheDifference(String s, String t) {
+//            int[] freq = new int[26];
+//            int n = s.length();
+//            for(int i = 0; i<n;i++) {
+//                freq[s.charAt(i) - 'a']++;
+//            }
+//            int n2 = t.length();
+//            for(int i = 0 ; i<n2;i++){
+//                if(freq[t.charAt(i)-'a']==0){
+//                    return t.charAt(i);
+//                }
+//                freq[t.charAt(i)-'a']--;
+//            }
+//            return '0';
+//        }
+//
+//    public static int firstUniqChar(String s) {
+//        int[] freq = new int[26];
+//        int n = s.length();
+//        for(int i = 0; i<n;i++) {
+//            freq[s.charAt(i) - 'a'] += 1;
+//        }
+//        for(int i =0;i<n;i++){
+//            if(freq[s.charAt(i)-'a']==1){
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
     public static int maximumLengthSubstring(String s) {
         int n = s.length();
         int[] freq = new int[26];
