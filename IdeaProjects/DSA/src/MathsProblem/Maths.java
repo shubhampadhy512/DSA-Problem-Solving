@@ -23,6 +23,12 @@ public class Maths {
 //        if(n%(sum+pro)==0)return true;
 //        return false;
 //    }
+//    public int countCommas(int n) {
+//        if(n<1000){
+//            return 0;
+//        }
+//        return n-999;
+//    }
     public static int smallestNumber(int n, int t) {
         int temp= n;
         int pro = 1;
