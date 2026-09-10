@@ -29,6 +29,7 @@ public class Maths {
 //        }
 //        return n-999;
 //    }
+    
     public static int smallestNumber(int n, int t) {
         int temp= n;
         int pro = 1;
