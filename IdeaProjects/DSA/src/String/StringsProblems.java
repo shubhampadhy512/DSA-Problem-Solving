@@ -15,6 +15,17 @@ public class StringsProblems {
         System.out.println(firstUniqChar(s));
     }
 
+//        public String largestEven(String s) {
+//            int i = s.length()-1;
+//            StringBuilder str = new StringBuilder(s);
+//            while(i>=0){
+//                if(str.charAt(i)%2==0)break;
+//                str.deleteCharAt(i);
+//                i--;
+//            }
+//            return str.toString();
+//        }
+//
 //    public void reverseString(char[] s) {
 //        int i = 0;
 //        int j = s.length-1;

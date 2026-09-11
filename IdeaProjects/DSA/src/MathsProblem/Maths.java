@@ -29,7 +29,24 @@ public class Maths {
 //        }
 //        return n-999;
 //    }
-    
+//public boolean isHappy(int n) {
+//    int slow = square(n);
+//    int fast = square(slow);
+//    while(slow!=fast){
+//        slow = square(slow);
+//        fast = square(square(fast));
+//    }
+//    if(fast==1)return true;
+//    return false;
+//}
+//    public int square (int n ){
+//        int square = 0;
+//        while(n!=0){
+//            square = square + (n%10*(n%10));
+//            n/=10;
+//        }
+//        return square;
+//    }
     public static int smallestNumber(int n, int t) {
         int temp= n;
         int pro = 1;
