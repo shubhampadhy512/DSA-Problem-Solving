@@ -15,6 +15,16 @@ public class StringsProblems {
         System.out.println(firstUniqChar(s));
     }
 
+//        public char repeatedCharacter(String s) {
+//            int[] freq = new int[26];
+//            int n = s.length();
+//            for(int i = 0; i < n ; i++){
+//                freq[s.charAt(i)-'a']++;
+//                if(freq[s.charAt(i)-'a']==2)return s.charAt(i);
+//            }
+//            return '0';
+//        }
+
 //        public String largestEven(String s) {
 //            int i = s.length()-1;
 //            StringBuilder str = new StringBuilder(s);
