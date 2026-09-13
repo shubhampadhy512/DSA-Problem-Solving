@@ -15,6 +15,7 @@ public class StringsProblems {
         System.out.println(firstUniqChar(s));
     }
 
+
 //        public char repeatedCharacter(String s) {
 //            int[] freq = new int[26];
 //            int n = s.length();
