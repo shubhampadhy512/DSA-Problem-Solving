@@ -14,7 +14,10 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
-
+    public static boolean isRectangleOverlap(int[] rec1, int[] rec2) {
+        if((rec1[0]<rec2[0]&&rec1[2]>rec2[0])||(rec1[0]>rec2[0]&&rec1[2]>rec2[2]))return true;
+        return false;
+    }
 
 //        public char repeatedCharacter(String s) {
 //            int[] freq = new int[26];
