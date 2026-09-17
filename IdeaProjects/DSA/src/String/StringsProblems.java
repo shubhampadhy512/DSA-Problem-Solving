@@ -14,10 +14,25 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
-    public static boolean isRectangleOverlap(int[] rec1, int[] rec2) {
-        if((rec1[0]<rec2[0]&&rec1[2]>rec2[0])||(rec1[0]>rec2[0]&&rec1[2]>rec2[2]))return true;
-        return false;
-    }
+//    public List<String> fizzBuzz(int n) {
+//        List<String> ans = new ArrayList<>(n);
+//        for(int i = 1 ; i<=n;i++){
+//            if(i%3==0&&i%5==0){
+//                ans.add(i-1,"FizzBuzz");
+//            }else if (i%3==0){
+//                ans.add(i-1,"Fizz");
+//            }else if (i%5==0){
+//                ans.add(i-1,"Buzz");
+//            }else {
+//                ans.add(Integer.toString(i));
+//            }
+//        }
+//        return ans;
+//    }
+//    public static boolean isRectangleOverlap(int[] rec1, int[] rec2) {
+//        return Math.min(rec1[2], rec2[2]) > Math.max(rec1[0], rec2[0])
+//                && Math.min(rec1[3], rec2[3]) > Math.max(rec1[1], rec2[1]);
+//    }
 
 //        public char repeatedCharacter(String s) {
 //            int[] freq = new int[26];
