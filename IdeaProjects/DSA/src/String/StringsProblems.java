@@ -14,7 +14,15 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
-//    public List<String> fizzBuzz(int n) {
+//    public static int reverseDegree(String s) {
+//        int ans = 0;
+//        int n = s.length();
+//        for(int i = 0 ; i<n ; i++){
+//            ans+=('z'-s.charAt(i)+1)*(i+1);
+//        }
+//        return ans;
+//    }
+//    public static List<String> fizzBuzz(int n) {
 //        List<String> ans = new ArrayList<>(n);
 //        for(int i = 1 ; i<=n;i++){
 //            if(i%3==0&&i%5==0){
