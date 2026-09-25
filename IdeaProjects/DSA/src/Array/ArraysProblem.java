@@ -37,6 +37,30 @@ public class ArraysProblem {
 //        rotate(arr4);
         System.out.println(minimumDeletions(arr2));
     }
+//    public int smallestIndex(int[] nums) {
+//        int sum =0;
+//        int i =0;
+//        while(i<nums.length){
+//            if(nums[i]>9){
+//                sum = sumNumber(nums[i]);
+//            }else {
+//                sum = nums[i];
+//            }
+//            if(sum==i){
+//                return i;
+//            }
+//            i++;
+//        }
+//        return -1;
+//    }
+//    public int sumNumber(int n){
+//        int sum = 0;
+//        while(n!=0){
+//            sum+=n%10;
+//            n/=10;
+//        }
+//        return sum;
+//    }
 //    public static int diagonalSum(int[][] mat) {
 //        int i = 0;
 //        int row = mat.length;
