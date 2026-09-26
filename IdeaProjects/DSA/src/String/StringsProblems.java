@@ -14,6 +14,33 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
+//    public static String evaluate(String s, List<List<String>> knowledge) {
+//        HashMap<String,String> map = new HashMap<>();
+//        StringBuilder ans = new StringBuilder();
+//        int n = knowledge.size();
+//        for(int i=0;i<n;i++){
+//            map.put(knowledge.get(i).get(0),knowledge.get(i).get(1));
+//        }
+//        n = s.length();
+//        for(int i = 0 ; i<n;i++){
+//            if(s.charAt(i)!='('){
+//                ans.append(s.charAt(i));
+//                continue;
+//            }
+//            StringBuilder str = new StringBuilder();
+//            i++;
+//            while(s.charAt(i)!=')'){
+//                str.append(s.charAt(i));
+//                i++;
+//            }
+//            if(map.containsKey(str.toString())){
+//                ans.append(map.get(str.toString()));
+//            }else{
+//                ans.append("?");
+//            }
+//        }
+//        return ans.toString();
+//    }
 //    public static int reverseDegree(String s) {
 //        int ans = 0;
 //        int n = s.length();
