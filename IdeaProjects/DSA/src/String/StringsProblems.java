@@ -14,7 +14,20 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
-    
+
+//    public int maxDepth(String s) {
+//        int n = s.length();
+//        int ans = 0;
+//        int x = 0;
+//        for(int i=0;i<n;i++){
+//            if(s.charAt(i)=='(')x++;
+//            if(s.charAt(i)==')')x--;
+//            ans = Math.max(ans,x);
+//        }
+//        return ans;
+//    }
+
+
 //    public static String evaluate(String s, List<List<String>> knowledge) {
 //        HashMap<String,String> map = new HashMap<>();
 //        StringBuilder ans = new StringBuilder();
