@@ -581,3 +581,29 @@
 //        }
 //        return false;
 //    }
+// 234 problem number optimized method 
+//    public boolean isPalindrome(ListNode head) {
+//        ListNode slow = head;
+//        if(slow.next==null)return true;
+//        ListNode fast = slow.next;
+//        while(fast!=null&&fast.next!=null){
+//            slow =slow.next;
+//            fast = fast.next.next;
+//        }
+//        ListNode temp1 = head;
+//        ListNode temp2 =null;
+//        ListNode curr=slow.next;
+//        while(curr!=null){
+//            ListNode next=curr.next;
+//            curr.next=temp2;
+//            temp2=curr;
+//            curr=next;
+//        }
+//        while(temp2!=null){
+//            if(temp1.val!=temp2.val)break;
+//            temp1 = temp1.next;
+//            temp2 = temp2.next;
+//        }
+//        if(temp2==null)return true;
+//        return false;
+//    }
