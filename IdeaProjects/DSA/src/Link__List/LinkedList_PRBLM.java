@@ -553,3 +553,31 @@
 //        odd.next = evenHead;
 //        return head;
 //    }
+// 234 problem number 1th method
+//public boolean isPalindrome(ListNode head) {
+//        ListNode temp = head;
+//        Stack<Integer> stack = new Stack<>();
+//        int len = 0;
+//        while(temp!=null){
+//            temp = temp.next;
+//            len++;
+//        }
+//        temp =head;
+//        for(int i =0;i<len/2;i++){
+//            stack.push(temp.val);
+//            temp = temp.next;
+//        }
+//        if(len%2!=0){
+//            temp = temp.next;
+//        }
+//        while(!stack.isEmpty()&&temp!=null){
+//            if(stack.peek()==temp.val){
+//                stack.pop();
+//            }
+//            temp = temp.next;
+//        }
+//        if(stack.isEmpty()&&temp==null){
+//            return true;
+//        }
+//        return false;
+//    }
