@@ -581,7 +581,7 @@
 //        }
 //        return false;
 //    }
-// 234 problem number optimized method 
+// 234 problem number optimized method
 //    public boolean isPalindrome(ListNode head) {
 //        ListNode slow = head;
 //        if(slow.next==null)return true;
@@ -606,4 +606,32 @@
 //        }
 //        if(temp2==null)return true;
 //        return false;
+//    }
+//   public ListNode reverseBetween(ListNode head, int left, int right) {
+//        if(left==right)return head;
+//        ListNode temp = new ListNode(0);
+//        temp.next = head;
+//        for(int i=1;i<left;i++){
+//            temp=temp.next;
+//        }
+//        boolean flag = false;
+//        if(temp.val==0)flag=!flag;
+//        ListNode prev = temp.next;
+//        ListNode curr = prev.next;
+//        for(int i=1;i<right-left;i++){
+//            ListNode next = curr.next;
+//            curr.next = prev;
+//            prev = curr;
+//            curr = next;
+//        }
+//        if(flag){
+//            temp.next.next = curr.next;
+//            curr.next = prev;
+//            head = curr;
+//        }else{
+//            temp.next.next = curr.next;
+//            curr.next = prev;
+//            temp.next = curr;
+//        }
+//        return head;
 //    }
