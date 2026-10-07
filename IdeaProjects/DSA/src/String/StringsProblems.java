@@ -14,6 +14,72 @@ public class StringsProblems {
 //        String[] s = {"cba","efg","dgi"};
         System.out.println(firstUniqChar(s));
     }
+//public String addBinary(String a, String b) {
+//        StringBuilder str = new StringBuilder();
+//        int i = a.length()-1;
+//        int j = b.length()-1;
+//        int carry = 0;
+//        while(i>=0&&j>=0){
+//            if(a.charAt(i)==b.charAt(j)){
+//                if(a.charAt(i)=='1'){
+//                    if(carry==0){
+//                        str.append('0');
+//                        carry = 1;
+//                    }else{
+//                        str.append('1');
+//                        carry = 1;
+//                    }
+//                }else{
+//                    if(carry==0){
+//                        str.append('0');
+//                    }else{
+//                        str.append('1');
+//                        carry = 0;
+//                    }
+//                }
+//            }else {
+//                if(carry==0){
+//                    str.append('1');
+//                    carry = 0;
+//                }else{
+//                    str.append('0');
+//                    carry = 1;
+//                }
+//            }
+//            i--;
+//            j--;
+//        }
+//        while(i>=0){
+//            if(carry==1){
+//                if(a.charAt(i)=='1'){
+//                    str.append('0');
+//                    carry = 1;
+//                }else {
+//                    str.append('1');
+//                    carry =0;
+//                }
+//            }else{
+//                str.append(a.charAt(i));
+//            }
+//            i--;
+//        }
+//        while(j>=0){
+//            if(carry==1){
+//                if(b.charAt(j)=='1'){
+//                    str.append('0');
+//                    carry = 1;
+//                }else {
+//                    str.append('1');
+//                    carry =0;
+//                }
+//            }else{
+//                str.append(b.charAt(j));
+//            }
+//            j--;
+//        }
+//        if(carry==1)str.append('1');
+//        return str.reverse().toString();
+//    }
 
 //    public int maxDepth(String s) {
 //        int n = s.length();
