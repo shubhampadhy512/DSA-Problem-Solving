@@ -648,3 +648,45 @@
 //    }
 //    return st;
 //}
+//public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//        ListNode temp = l1;
+//        Stack<Integer> stack1 = new Stack<>();
+//        while(temp!=null){
+//            stack1.push(temp.val);
+//            temp = temp.next;
+//        }
+//        Stack<Integer> stack2 = new Stack<>();
+//        temp = l2;
+//        while(temp!=null){
+//            stack2.push(temp.val);
+//            temp = temp.next;
+//        }
+//        int carry = 0;
+//        while(!stack1.isEmpty()&&!stack2.isEmpty()){
+//            int sum = stack1.pop()+stack2.pop()+carry;
+//            ListNode curr = new ListNode(sum%10);
+//            carry = sum/10;
+//            curr.next = temp;
+//            temp = curr;
+//        }
+//        while(!stack1.isEmpty()){
+//            int sum = stack1.pop()+carry;
+//            ListNode curr = new ListNode(sum%10);
+//            carry = sum/10;
+//            curr.next = temp;
+//            temp = curr;
+//        }
+//        while(!stack2.isEmpty()){
+//            int sum = stack2.pop()+carry;
+//            ListNode curr = new ListNode(sum%10);
+//            carry = sum/10;
+//            curr.next = temp;
+//            temp = curr;
+//        }
+//        if(carry!=0){
+//            ListNode curr = new ListNode(carry);
+//            curr.next = temp;
+//            temp = curr;
+//        }
+//        return temp;
+//    }
