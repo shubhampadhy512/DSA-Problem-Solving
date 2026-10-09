@@ -12,6 +12,23 @@ public class stackprblm {
         int[] s1 = {9, 7, 5, 3, 1};
         System.out.println(Arrays.toString(replaceElements(s1)));
     }
+
+//    public String removeStars(String s) {
+//        Stack<Character> stack = new Stack<>();
+//        int n = s.length();
+//        for(int i=0;i<n;i++){
+//            if(s.charAt(i)=='*'){
+//                stack.pop();
+//            }else{
+//                stack.push(s.charAt(i));
+//            }
+//        }
+//        StringBuilder str = new StringBuilder();
+//        while(!stack.isEmpty()){
+//            str.append(stack.pop());
+//        }
+//        return str.reverse().toString();
+//    }
     public static int[] replaceElements(int[] arr) {
         int n = arr.length;
         int[] res = new int[n];
