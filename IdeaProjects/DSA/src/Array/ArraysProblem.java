@@ -38,6 +38,24 @@ public class ArraysProblem {
         System.out.println(minimumDeletions(arr2));
     }
 
+
+//    public long maxAlternatingSum(int[] nums) {
+//        long ans = 0;
+//        for(int i=0;i<nums.length;i++){
+//            if(nums[i]<0)nums[i]*=-1;
+//        }
+//        Arrays.sort(nums);
+//        int left = 0;
+//        int right = nums.length-1;
+//        while(left<right){
+//            ans +=nums[right]*nums[right]-nums[left]*nums[left];
+//            left++;
+//            right--;
+//        }
+//        if(left==right)ans+=nums[left]*nums[left];
+//        return ans;
+//    }
+
 //    public int maxArea(int[] height) {
 //        int left = 0;
 //        int right = height.length-1;
